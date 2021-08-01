@@ -9,8 +9,7 @@ import "./Layout.css"
 const Header = ({siteTitle}) => (
 
     <header>
-
-        <h1>FOOD FROM MY FLAT</h1>
+        <div/>
         <nav>
             <ul>
                 <li><Link to="/" className='navLinks'>HOME</Link> </li>
@@ -20,8 +19,9 @@ const Header = ({siteTitle}) => (
             </ul>
 
         </nav>
-
+        <h1>FOOD FROM MY FLAT</h1>
     </header>
+
 
 )
 
