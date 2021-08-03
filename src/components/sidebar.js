@@ -6,7 +6,7 @@ const Sidebar = () => (
     <aside className='sideMenu' >
 
         <h3 style={{borderBottom:`dotted 2px black`, margin:`10px 20px`}} >MENU</h3>
-        
+        <Link to="/test1" className='navLinks'>TEST1</Link> 
 
     </aside>
 

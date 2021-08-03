@@ -13,7 +13,7 @@ const Header = ({siteTitle}) => (
         <nav>
             <ul>
                 <li><Link to="/" className='navLinks'>HOME</Link> </li>
-                <li><Link to="/about/" className='navLinks' >ABOUT</Link> </li>
+                <li><Link to="/recipes/" className='navLinks' >RECIPES</Link> </li>
                 <li><Link to="/equipment" className='navLinks'>EQUIPMENT</Link> </li>
          
             </ul>
