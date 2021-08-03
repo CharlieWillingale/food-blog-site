@@ -50,7 +50,7 @@ nav li {
 .navLinks {
   color: black;
   text-decoration: none;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   margin:0 3px
 }
 
@@ -92,6 +92,7 @@ footer div {
 footer a {
   justify-self: center;
   align-self: center;
+  padding-top: 5px ;
   /* margin: auto; */
 }
 
