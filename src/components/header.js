@@ -96,7 +96,6 @@ const Header = ({siteTitle}) => {
 
         </nav>
 
-        <h1>FOOD FROM MY FLAT</h1>
     </header>
     )
 

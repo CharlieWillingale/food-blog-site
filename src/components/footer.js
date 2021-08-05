@@ -10,7 +10,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const Footer = () => (
 
     <footer >
-        <div />
+        <div style={{padding: `10px`}}/>
         <div>
             {/* <a href=''>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -24,6 +24,10 @@ const Footer = () => (
             </a>
         </div>
         <div />
+
+        <footer style={{paddingRight: `3vw`}}>
+          © {new Date().getFullYear()}, Built with{` `}<a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
     </footer>
 
 )
