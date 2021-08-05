@@ -71,7 +71,7 @@ const Header = ({siteTitle}) => {
     return(
     <header>
         <div/>
-        <nav>
+        <nav style={{overflowX: `hidden`, position:`relative`}}>
             <ul className='nav-ul'>
                 <li><Link to="/" className='navLinks'>HOME</Link> </li>
                 <li><Link to="/recipes/" className='navLinks' >RECIPES</Link> </li>

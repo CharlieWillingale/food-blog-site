@@ -48,6 +48,10 @@ nav li {
     display: none;
   }
 
+  h1 {
+    font-size: 1.5rem;
+  }
+
   #hidden{
     display: flex;
     flex-direction: column;

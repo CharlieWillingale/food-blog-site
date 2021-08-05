@@ -12,7 +12,6 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
   text-align: center;
-  overflow-x: hidden;
   background-color: var(--main-color);
   color: var(--font-color);
 }
@@ -136,12 +135,17 @@ footer a {
     justify-content: space-around;
   }
 
-  html {font-size: 90%;}
 
-  .sideMenu, 
-  .sideNav, 
-  .sideSocial,
-  aside{
+
+  html {
+    font-size: 90%;
+    overflow-x: hidden;}
+
+  .sideSocial {
+    flex-direction: column;
+  }
+ 
+  .sideNav{
     display: none;
     height: 0;
     min-height: none;}
