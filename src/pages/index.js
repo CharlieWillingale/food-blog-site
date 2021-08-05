@@ -5,6 +5,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import Collapse from 'react-bootstrap/Collapse'
+import Button from 'react-bootstrap/Button'
+
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -17,8 +21,9 @@ const IndexPage = () => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     />
-    
+
   </Layout>
+
 )
 
 export default IndexPage

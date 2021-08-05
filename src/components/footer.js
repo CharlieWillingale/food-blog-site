@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 
-import "./Layout.css"
+import "./GlobalLayout.css"
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 

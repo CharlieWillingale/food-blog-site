@@ -5,6 +5,7 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
   text-align: center;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -23,7 +24,7 @@ main {
   padding-bottom: 33vh;
 }
 
-header {
+/* header {
   display: grid;
   justify-content: center;
   grid-template-columns: 5% 20% 50% 20% 5%;
@@ -119,12 +120,11 @@ footer a {
   justify-self: center;
   align-self: center;
   padding-top: 5px ;
-  /* margin: auto; */
-}
+  margin: auto; }*/
 
 @media only screen and (max-width: 480px) {
   html {
-    font-size: 100%;
+    font-size: 90%;
   }
-}
-
+} 
+ 

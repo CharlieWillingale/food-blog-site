@@ -1,0 +1,54 @@
+
+
+header {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 5% 20% 50% 20% 5%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". search . nav ."
+    ". title title title .";
+  
+  border-bottom: 2px dotted black;
+}
+
+header h1 {
+  grid-area: title;
+  justify-self: center;
+}
+
+nav {
+  grid-area: nav;
+  /* z-index: 10; */
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+nav li {
+  list-style: none;
+}
+.navLinks {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin:0 3px
+}
+
+#hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .nav-ul {
+    display: none;
+  }
+
+  #hidden{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
