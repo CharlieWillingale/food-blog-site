@@ -4,6 +4,7 @@
   --font-color: #000;
   --light-font-color: #c3c3c3;
 }
+
 header {
   display: grid;
   justify-content: center;
@@ -17,6 +18,12 @@ header {
 
   background-color: var(--header-color);
   box-shadow: 2px 1px 5px black;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 4rem;
 }
 
 nav {

@@ -17,6 +17,7 @@ exports.createPages = ({ actions, graphql }) => {
               date
               author
               categories
+              snippet
             }
           }
         }
