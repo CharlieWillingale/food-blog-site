@@ -16,8 +16,8 @@ const MenuIcon = styled.button`
    
     border: none;
     position: relative;
-    top: 0.5rem;
-    left: 4rem;
+    top: 30%;
+    left: 80%;
     padding: auto;
     
     z-index: 10;
@@ -73,16 +73,17 @@ const Header = ({siteTitle}) => {
 
     return(
     <header>
-        <StaticImage
+        <StaticImage 
         src="../images/FFMF-LOGO.png"
-        width={700}
+        height={150}
         placeholder="blurred"
         quality={95}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="FFMF-Logo"
         style={{ 
-            minWidth: `700`,
-            margin: `3px`
+            margin: `3px`,
+            gridArea: `logo`,
+            width:`30%`
         }}
       /> 
         <nav>

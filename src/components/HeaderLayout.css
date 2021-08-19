@@ -6,9 +6,9 @@
 header {
   display: grid;
   justify-content: center;
-  grid-template-columns: 5% 20% minmax(20%,50%) minmax(auto,50%)  5%;
+  grid-template-columns: 5% 20% minmax(20%,50%) minmax(auto,50%) 5%;
   grid-template-areas: 
-    ". search . nav .";
+    ". logo . nav .";
   
   margin-bottom: 10px;
 
@@ -27,14 +27,17 @@ nav > ul {
   display: flex;
   justify-content: space-evenly;
   padding-left: 0;
+  margin: 10% 0;
 }
+
 nav li {
   list-style: none;
 }
+
 .navLinks {
   color: var(--font-color);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   margin:0 3px
 }
 
@@ -42,24 +45,9 @@ li > a:hover {
   font-weight: bolder;
 }
 
+@media only screen and (max-width: 1300px) {
 
-/* #hidden {
-  display: none;
-} */
-
-/* @media only screen and (max-width: 768px) {
-
-  .nav-ul {
-    display: none;
+  header {
+    grid-template-columns: 5% 35% 1fr minmax(auto,50%)  5%;
   }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  #hidden{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-} */
+}
