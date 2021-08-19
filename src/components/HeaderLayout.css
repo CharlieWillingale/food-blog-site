@@ -16,12 +16,6 @@ header {
   box-shadow: 2px 1px 15px grey;
 }
 
-h1 {
-  text-align: center;
-  width: 100%;
-  padding-bottom: 4rem;
-}
-
 nav {
   grid-area: nav;
   min-height: 50px;
@@ -43,6 +37,11 @@ nav li {
   font-size: 0.8rem;
   margin:0 3px
 }
+
+li > a:hover {
+  font-weight: bolder;
+}
+
 
 /* #hidden {
   display: none;

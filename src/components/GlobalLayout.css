@@ -1,6 +1,6 @@
 :root{
 
-  --main-color: #cfe5df;
+  --main-color: #e9ecec;
   --header-color: #2ab289;
   --font-color: #000;
   --light-font-color: #c3c3c3;
@@ -32,12 +32,11 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-li > a:hover {
-  font-weight: bolder;
-}
-
 h1 {
   font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 4rem;
 }
 
 .thumbnail-links {
