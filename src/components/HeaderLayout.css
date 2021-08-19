@@ -1,6 +1,4 @@
 :root{
-  --main-color: #707476;
-  --header-color: #505050;
   --font-color: #000;
   --light-font-color: #c3c3c3;
 }
@@ -8,16 +6,14 @@
 header {
   display: grid;
   justify-content: center;
-  grid-template-columns: 5% 20% 50% 20% 5%;
-  grid-template-rows: auto;
+  grid-template-columns: 5% 20% minmax(20%,50%) minmax(auto,50%)  5%;
   grid-template-areas: 
     ". search . nav .";
   
-  border-bottom: 1px solid black;
   margin-bottom: 10px;
 
   background-color: var(--header-color);
-  box-shadow: 2px 1px 5px black;
+  box-shadow: 2px 1px 15px grey;
 }
 
 h1 {
@@ -28,28 +24,31 @@ h1 {
 
 nav {
   grid-area: nav;
-  min-height: 2.8rem;
+  min-height: 50px;
+  overflow: -moz-hidden-unscrollable;
+  overflow: hidden;
 }
 
-nav ul {
+nav > ul {
   display: flex;
   justify-content: space-evenly;
+  padding-left: 0;
 }
 nav li {
   list-style: none;
 }
 .navLinks {
-  color: var(--light-font-color);
+  color: var(--font-color);
   text-decoration: none;
   font-size: 0.8rem;
   margin:0 3px
 }
 
-#hidden {
+/* #hidden {
   display: none;
-}
+} */
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 
   .nav-ul {
     display: none;
@@ -64,4 +63,4 @@ nav li {
     flex-direction: column;
     justify-content: space-around;
   }
-}
+} */

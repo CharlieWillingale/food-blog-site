@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
 import "./GlobalLayout.css"
 import "./HeaderLayout.css"
@@ -36,18 +37,20 @@ const MenuLinks = styled.nav`
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 
+    position: fixed;
     z-index: 5;
 
-    position: absolute;
     top: 0;
     right: 0;
 
-    transition: transform 300ms;
+    transition: transform 200ms;
+    transition-timing-function: ease-in-out;
     transform: ${({nav}) => nav ? "translateX(0%)" : "translateX(100%)"};
 
+    
     a {
         color: black;
         text-decoration: none;
@@ -70,13 +73,23 @@ const Header = ({siteTitle}) => {
 
     return(
     <header>
-        <div/>
-        <nav style={{overflowX: `hidden`, position:`relative`}}>
+        <StaticImage
+        src="../images/FFMF-LOGO.png"
+        width={700}
+        placeholder="blurred"
+        quality={95}
+        formats={["AUTO", "WEBP", "AVIF"]}
+        alt="FFMF-Logo"
+        style={{ 
+            minWidth: `700`,
+            margin: `3px`
+        }}
+      /> 
+        <nav>
             <ul className='nav-ul'>
                 <li><Link to="/" className='navLinks'>HOME</Link> </li>
                 <li><Link to="/recipes/" className='navLinks' >RECIPES</Link> </li>
-                <li><Link to="/equipment" className='navLinks'>EQUIPMENT</Link> </li>
-         
+                <li><Link to="/equipment/" className='navLinks'>EQUIPMENT</Link> </li>
             </ul>
 
             {/* For burger nav on smal display */}

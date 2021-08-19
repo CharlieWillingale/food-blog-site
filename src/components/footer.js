@@ -1,7 +1,4 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-
 
 import "./GlobalLayout.css"
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -25,9 +22,9 @@ const Footer = () => (
         </div>
         <div />
 
-        <footer style={{paddingRight: `3vw`}}>
+        <div style={{paddingRight: `3vw`, color:`#000`}}>
           © {new Date().getFullYear()}, Built with{` `}<a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        </div>
     </footer>
 
 )

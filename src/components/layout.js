@@ -16,22 +16,45 @@ import Sidebar from "./sidebar"
 
 import "./GlobalLayout.css"
 
-const Circle1 = styled.div`
-  position: absolute;
-  top: 20vh;
-  left: -30vw;
-  z-index: -5;
+// const Circle1 = styled.div`
+//   position: absolute;
+//   top: 20vh;
+//   left: -30vw;
+//   z-index: -5;
 
-  border-radius: 50%;
-  width: 71vw;
-  height: 71vw;
-  min-height: 250px;
-  min-width: 250px;
+//   border-radius: 50%;
+//   width: 71vw;
+//   height: 71vw;
+//   min-height: 250px;
+//   min-width: 250px;
 
-  background-color: #505050;
-  box-shadow: 1px 1px 5px black;
+//   background-color: #505050;
+//   box-shadow: 1px 1px 5px black;
+// `
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 5% 70% 20% 5%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  '. content sidebar .';
+  margin-top: 1rem;
+
+  @media only screen and (max-width: 650px) {
+    grid-template-columns: 5% auto 5%;
+    grid-template-areas: 
+    '. content .'; 
+  }
 `
-
+const MainContent = styled.main`
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  margin: 10px 0;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -46,15 +69,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div id="overflowX">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       
-      <div className='container'>
-        <Circle1/>
-        <main className='mainContent'>{children}</main>
+      <Container>
+        <MainContent>{children}</MainContent>
+        <Sidebar />
+      </Container>
 
-      <Sidebar />
-      </div>
       <Footer />
+      </div>
     </>
   )
 }
