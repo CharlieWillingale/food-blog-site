@@ -5,7 +5,6 @@ import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
 import "./GlobalLayout.css"
-import "./HeaderLayout.css"
 
 
 const MenuIcon = styled.button`
@@ -28,6 +27,24 @@ const MenuIcon = styled.button`
         background: black;
         border-radius: 5px;
         transform-origin: 1px;
+
+        :first-child{
+            transition: transform 200ms;
+            transition-timing-function: ease-in-out;
+            transform: ${({nav}) => nav ? "rotate(45deg)" : "rotate(0deg)"};
+        }
+
+        :nth-child(2){
+            transition: transform 200ms;
+            transition-timing-function: ease-in-out;
+            opacity: ${({nav}) => nav ? "0" : "1"};
+        }
+
+        :last-child{
+            transition: transform 200ms;
+            transition-timing-function: ease-in-out;
+            transform: ${({nav}) => nav ? "rotate(-45deg)" : "rotate(0deg)"};
+        }
     }
 `
 
@@ -41,7 +58,7 @@ const MenuLinks = styled.nav`
     width: 100%;
 
     position: fixed;
-    z-index: 5;
+    z-index: 9;
 
     top: 0;
     right: 0;
@@ -94,7 +111,7 @@ const Header = ({siteTitle}) => {
             </ul>
 
             {/* For burger nav on smal display */}
-            <MenuIcon id='hidden' onClick={() => showNav(!nav)}>
+            <MenuIcon id='hidden' nav={nav} onClick={() => showNav(!nav)}>
                 <div />
                 <div />
                 <div />

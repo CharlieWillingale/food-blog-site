@@ -1,38 +1,50 @@
-
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  const postTemplate = require.resolve('./src/templates/blog-post.js')
-
-  return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            html
-            id
-            frontmatter {
-              path
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
+ const path = require(`path`)
+ const slash = require(`slash`)
+ 
+ exports.createPages = ({ graphql, actions }) => {
+   const { createPage } = actions
+   return graphql(
+     `
+       {
+         allContentfulBlogPost {
+           edges {
+             node {
+              id
               title
-              date
-              author
-              categories
-              snippet
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
-
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-      })
-    })
-  })
-}
+              slug
+              heading
+             }
+           }
+         }
+       }
+     `
+   )
+     .then(result => {
+       if (result.errors) {
+         console.log("Error retrieving contentful data", result.errors)
+       }
+ 
+       // Resolve the paths to our template
+       const sitePostTemplate = path.resolve("./src/templates/siteposts.js")
+ 
+       // Then for each result we can create a page
+       result.data.allContentfulBlogPost.edges.forEach(edge => {
+         createPage({
+           path: `${edge.node.slug}`,
+           component: slash(sitePostTemplate),
+           context: {
+             slug: edge.node.slug,
+             id: edge.node.id,
+           },
+         })
+       })
+     })
+     .catch(error => {
+       console.log("Error cannot retrive contentful data", error)
+     })
+ }
